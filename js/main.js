@@ -17,21 +17,25 @@ $(document).ready(() => {
 
 // get lat & lng for city via google geocode
 //https://maps.googleapis.com/maps/api/geocode/json?&address=dortmund
-function getCityCoords(city){
-
-  axios.get('https://maps.googleapis.com/maps/api/geocode/json?&address='+city)
-    .then(function (response) {
+function getCityCoords (city) {
+  axios.get('https://maps.googleapis.com/maps/api/geocode/json?&address=' + city)
+    .then((response) => {
       cityObj = response.data.results[0];
       cityName = cityObj.formatted_address;
-      console.log(cityObj.geometry.location.lat + ',' + cityObj.geometry.location.lng);
+      cityCoords = cityObj.geometry.location.lat + ',' + cityObj.geometry.location.lng;
+      getWeather(cityCoords);
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
 
   return;
 }
 
-function getWeather(city){
-  console.log(city + 'key= ' +cfg.DARKSKY_API_KEY);
+function getWeather (cityCoords) {
+  /*console.log('https://api.darksky.net/forecast/' + cfg.DARKSKY_API_KEY + '/' + cityCoords);
+  return;*/
+  axios.get('https://api.darksky.net/forecast/' + cfg.DARKSKY_API_KEY + '/' + cityCoords).then((res) => {
+  console.log(res);
+  });
 }
