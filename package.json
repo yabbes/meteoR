@@ -13,6 +13,7 @@
     "bootswatch": "^3.3.7"
   },
   "devDependencies": {
+    "axios": "^0.16.2",
     "bootstrap-sass": "^3.3.7"
   }
 }
