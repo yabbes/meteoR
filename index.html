@@ -13,9 +13,6 @@
     <!-- End header -->
 
 
-    <div class="parallax">
-    </div>
-
     <!-- Welcome Title box -->
     <div class="jumbotron">
       <div class="container">
@@ -37,17 +34,33 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h2>Check weather forecast for</h2>
-        <div class="form-group">
-          <form id="searchForm">
-            <input
-            type="text"
-            placeholder="City:"
-            class="form-control"
-            id="searchCity">
-          </form>
+        <div class="row">
+          <div class="col-md-8">
+            <h2>Check Weather Forecast for</h2>
+            <div class="form-group">
+              <form id="searchForm">
+                <input
+                type="text"
+                placeholder="City:"
+                class="form-control"
+                id="searchCity">
+              </form>
+            </div>
+          </div>
+          <div class="col-md-4 pull-right">
+            <span>Currently showing data for: </span>
+            <span id="fieldCityName" class="label-default">{City}</span>
+          </div>
 
         </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Test</h2>
+          </div>
+
+        </div>
+
       </div>
 
     </div>

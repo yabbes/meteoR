@@ -1,9 +1,9 @@
-let mm;
 var cfg = new apicfg();
 
 var cityCoords;
 var cityObj;
 var cityName;
+var result;
 
 $(document).ready(() => {
   $('#searchForm').on('submit', (e) => {
@@ -33,9 +33,22 @@ function getCityCoords (city) {
 }
 
 function getWeather (cityCoords) {
-  /*console.log('https://api.darksky.net/forecast/' + cfg.DARKSKY_API_KEY + '/' + cityCoords);
-  return;*/
-  axios.get('https://api.darksky.net/forecast/' + cfg.DARKSKY_API_KEY + '/' + cityCoords).then((res) => {
-  console.log(res);
+  $.ajax({
+      url: 'https://api.darksky.net/forecast/' + cfg.DARKSKY_API_KEY + '/' + cityCoords,
+      type: 'GET',
+      headers: {'X-Requested-With': 'XMLHttpRequest'},
+      crossDomain: true,
+      dataType: 'jsonp'
+    }).done(function(data) {
+
+      result = data;
+      updateApp();
   });
+
+}
+
+function updateApp(){
+  console.log(result);
+  $('#fieldCityName').html(cityName);
+  
 }
