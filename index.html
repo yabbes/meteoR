@@ -35,7 +35,7 @@
     <div class="jumbotron">
       <div class="container">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-8 mb-0">
             <h2>Check Weather Forecast for</h2>
             <div class="form-group">
               <form id="searchForm">
@@ -46,21 +46,78 @@
                 id="searchCity">
               </form>
             </div>
-          </div>
-          <div class="col-md-4 pull-right">
-            <span>Currently showing data for: </span>
-            <span id="fieldCityName" class="label-default">{City}</span>
+            <p id="dailySummary"
+            class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
           </div>
 
         </div>
+      </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <h2>Test</h2>
-          </div>
+      <div class="container">
+        <table class="table table-striped table-hover ">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Currently</th>
+              <th>Column heading</th>
+              <th>Column heading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="desc">Time</td>
+              <td id="cTime">{cTime}</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+            <tr>
+              <td>Summary</td>
+              <td id="cSummary">{cSummary}</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+            <tr class="">
+              <td>Temperature</td>
+              <td id="cTemperature">{cTemperature}</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+            <tr class="">
+              <td>precipProbability</td>
+              <td id="cPrecipProbability">{cPrecipProbability}</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+            <tr class="">
+              <td>Feels</td>
+              <td id="cApparentTemperature">{cApparentTemperature}</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+            <tr class="">
+              <td>Wind</td>
+              <td id="cWindSpeed">{cWindSpeed}</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+            <tr class="">
+              <td>Ozon + UV Index</td>
+              <td id="cOzoneUvIndex">{cOzoneUvIndex}</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+            <tr class="">
+              <td>Humidity</td>
+              <td id="cHumidity">{cHumidity}</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+          </tbody>
+        </table>
 
+        <div class="col-3">
+          <h4>Showing forecast for <span id="fieldCityName" class="badge">Time</span></h4>
         </div>
-
       </div>
 
     </div>

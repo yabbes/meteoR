@@ -33,8 +33,9 @@ function getCityCoords (city) {
 }
 
 function getWeather (cityCoords) {
+  let options = '?units=si&lang=de';
   $.ajax({
-      url: 'https://api.darksky.net/forecast/' + cfg.DARKSKY_API_KEY + '/' + cityCoords,
+      url: 'https://api.darksky.net/forecast/' + cfg.DARKSKY_API_KEY + '/' + cityCoords + options,
       type: 'GET',
       headers: {'X-Requested-With': 'XMLHttpRequest'},
       crossDomain: true,
@@ -49,6 +50,20 @@ function getWeather (cityCoords) {
 
 function updateApp(){
   console.log(result);
+  //Daily summary
+  $('#dailySummary').html(result.daily.summary);
+  //"Currently" data and city name
+
   $('#fieldCityName').html(cityName);
-  
+  $('#cTime').html(result.currently.time);
+  $('#cSummary').html(result.currently.summary);
+  $('#cTemperature').html(result.currently.temperature);
+  $('#cPrecipProbability').html(result.currently.precipProbability);
+  $('#cApparentTemperature').html(result.currently.apparentTemperature);
+  $('#cWindSpeed').html(result.currently.windSpeed);
+  $('#cOzoneUvIndex').html((result.currently.ozone + ' ' + result.currently.uvIndex));
+  $('#cHumidity').html(result.currently.humidity);
+
+
+
 }
