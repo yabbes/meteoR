@@ -53,44 +53,62 @@ function updateApp(){
   //Daily summary
   $('#dailySummary').html(result.daily.summary);
 
-  //"Currently" data and city name
+  // "Currently" data and city name
+  // Calculations
+  // I don't need to calculate the mean temp because the temp is the current temp
+  // Data binding
   $('#fieldCityName').html(cityName);
   $('#cTime').html(result.currently.time);
   $('#cSummary').html(result.currently.summary);
   $('#cTemperature').html((result.currently.temperature + '°C'));
   $('#cTemperatureMinMax').html((result.daily.data[0].temperatureMin + ' - ' + result.daily.data[0].temperatureMax + '°C'));
-  $('#cPrecipProbability').html(result.currently.precipProbability);
+  $('#cPrecipProbability').html((result.currently.precipProbability * 100) + '%');
   $('#cApparentTemperature').html((result.currently.apparentTemperature + '°C'));
   $('#cWindSpeed').html(result.currently.windSpeed);
   $('#cOzoneUvIndex').html((result.currently.ozone + ' ' + result.daily.data[0].uvIndex));
-  $('#cHumidity').html(result.currently.humidity);
+  $('#cHumidity').html((result.currently.humidity * 100) + '%');
 
   // Tomorrow
   // Calculations
   let mTempMin = result.daily.data[1].temperatureMin;
   let mTempMax = result.daily.data[1].temperatureMax;
-  let mTempMean = Math.floor((mTempMin + mTempMax / 2));
-  //
+  let mTempMean = Math.floor((mTempMin + mTempMax) / 2);
+
+  let mApparentTempMin = result.daily.data[1].apparentTemperatureMin;
+  let mApparentTempMax = result.daily.data[1].apparentTemperatureMax;
+  let mApparentTempMean = Math.floor((mApparentTempMin + mApparentTempMax / 2));
+  // Data binding
   $('#mTime').html(result.daily.data[1].time);
   $('#mSummary').html(result.daily.data[1].summary);
   $('#mTemperature').html((mTempMean + '°C'));
   $('#mTemperatureMinMax').html((mTempMin + ' - ' + mTempMax + '°C'));
   $('#mPrecipProbability').html((result.daily.data[1].precipProbability * 100) + '%');
-  $('#mApparentTemperature').html((result.currently.apparentTemperature + '°C'));
-  $('#mWindSpeed').html(result.currently.windSpeed);
-  $('#mOzoneUvIndex').html((result.currently.ozone + ' ' + result.daily.data[0].uvIndex));
-  $('#mHumidity').html(result.currently.humidity);
+  $('#mApparentTemperature').html((mApparentTempMean + '°C'));
+  $('#mWindSpeed').html(result.daily.data[1].windSpeed);
+  $('#mOzoneUvIndex').html((result.daily.data[1].ozone + ' ' + result.daily.data[1].uvIndex));
+  $('#mHumidity').html((result.daily.data[1].humidity * 100) + '%');
+
 
   // The day after tomorrow
-  $('#cTime').html(result.currently.time);
-  $('#cSummary').html(result.currently.summary);
-  $('#cTemperature').html((result.currently.temperature + '°C'));
-  $('#cTemperatureMinMax').html((result.daily.data[0].temperatureMin + ' - ' + result.daily.data[0].temperatureMax + '°C'));
-  $('#cPrecipProbability').html(result.currently.precipProbability);
-  $('#cApparentTemperature').html((result.currently.apparentTemperature + '°C'));
-  $('#cWindSpeed').html(result.currently.windSpeed);
-  $('#cOzoneUvIndex').html((result.currently.ozone + ' ' + result.daily.data[0].uvIndex));
-  $('#cHumidity').html(result.currently.humidity);
+  // Calculations
+  let daTempMin = result.daily.data[2].temperatureMin;
+  let daTempMax = result.daily.data[2].temperatureMax;
+  let daTempMean = Math.floor((daTempMin + daTempMax) / 2);
+
+  let daApparentTempMin = result.daily.data[2].apparentTemperatureMin;
+  let daApparentTempMax = result.daily.data[2].apparentTemperatureMax;
+  let daApparentTempMean = Math.floor((daApparentTempMin + daApparentTempMax / 2));
+
+  // Data binding for the day after tomorrow
+  $('#da_Time').html(result.daily.data[2].time);
+  $('#da_Summary').html(result.daily.data[2].summary);
+  $('#da_Temperature').html((daTempMean + '°C'));
+  $('#da_TemperatureMinMax').html((daTempMin + ' - ' + daTempMax + '°C'));
+  $('#da_PrecipProbability').html((result.daily.data[2].precipProbability * 100) + '%');
+  $('#da_ApparentTemperature').html((daApparentTempMean + '°C'));
+  $('#da_WindSpeed').html(result.daily.data[2].windSpeed);
+  $('#da_OzoneUvIndex').html((result.daily.data[2].ozone + ' ' + result.daily.data[2].uvIndex));
+  $('#da_Humidity').html((result.daily.data[2].humidity * 100) + '%');
 
 
 
