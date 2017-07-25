@@ -8400,7 +8400,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   margin-bottom: 0px !important; }
 
 .header {
-  margin: 10px; }
+  margin: 10px !important; }
 
 .parallax {
   /* The image used */
