@@ -8396,9 +8396,12 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   overflow: visible;
   clip: auto; }
 
+.jumbotron {
+  margin-bottom: 0px !important; }
+
 .parallax {
   /* The image used */
-  background-image: url("https://static.pexels.com/photos/495607/pexels-photo-495607.jpeg");
+  background-image: url("../img/pexels-photo-495607.jpeg");
   /* Set a specific height */
   height: 300px;
   /* Create the parallax scrolling effect */
@@ -8409,7 +8412,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 
 .parallax2 {
   /* The image used */
-  background-image: url("https://static.pexels.com/photos/132687/pexels-photo-132687.jpeg");
+  background-image: url("../img/pexels-photo-132687.jpeg");
   /* Set a specific height */
   height: 300px;
   /* Create the parallax scrolling effect */

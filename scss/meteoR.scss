@@ -1,14 +1,17 @@
 // @import "customVariables"; //Custom Variables for Meteo-R
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "../node_modules/bootswatch/flatly/variables";
+@import "variables"; // flatly variables
 @import "../node_modules/bootswatch/flatly/bootswatch";
 // Font Awesome
 @import "../bower_components/font-awesome/scss/font-awesome";
 
+.jumbotron {
+  margin-bottom: 0px !important;
+}
 
 .parallax {
     /* The image used */
-    background-image: url("https://static.pexels.com/photos/495607/pexels-photo-495607.jpeg");
+    background-image: url("../img/pexels-photo-495607.jpeg");
 
     /* Set a specific height */
     height: 300px;
@@ -22,7 +25,7 @@
 
 .parallax2 {
     /* The image used */
-    background-image: url("https://static.pexels.com/photos/132687/pexels-photo-132687.jpeg");
+    background-image: url("../img/pexels-photo-132687.jpeg");
 
     /* Set a specific height */
     height: 300px;
