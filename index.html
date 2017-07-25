@@ -18,7 +18,7 @@
       <div class="container">
         <h1 class="display-4">MétéoR</h3>
         <p>
-          <span class="lead">Prévisions météo</span>
+          <span class="lead">Ihr Wettervorhersagedienst</span>
 
         </p>
       </div>
@@ -36,18 +36,18 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 mb-0">
-            <h2>Check Weather Forecast for</h2>
+            <h2>Wettervorhersage für</h2>
             <div class="form-group">
               <form id="searchForm">
                 <input
                 type="text"
-                placeholder="City:"
+                placeholder="Stadt:"
                 class="form-control"
                 id="searchCity">
               </form>
             </div>
             <p id="dailySummary"
-            class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+            class="text-warning"></p>
           </div>
 
         </div>
@@ -58,65 +58,71 @@
           <thead>
             <tr>
               <th>#</th>
-              <th>Currently</th>
-              <th>Column heading</th>
-              <th>Column heading</th>
+              <th>Aktuell</th>
+              <th>Morgen</th>
+              <th>Übermorgen</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="desc">Time</td>
-              <td id="cTime">{cTime}</td>
-              <td>Column content</td>
-              <td>Column content</td>
+              <td class="desc">Zeit</td>
+              <td id="cTime"></td>
+              <td id="mTime"></td>
+              <td id="da_Time"></td>
             </tr>
             <tr>
-              <td>Summary</td>
-              <td id="cSummary">{cSummary}</td>
-              <td>Column content</td>
-              <td>Column content</td>
+              <td>Wetter</td>
+              <td id="cSummary"></td>
+              <td id="mSummary"></td>
+              <td id="da_Summary"></td>
             </tr>
             <tr class="">
-              <td>Temperature</td>
-              <td id="cTemperature">{cTemperature}</td>
-              <td>Column content</td>
-              <td>Column content</td>
+              <td>Temperatur</td>
+              <td id="cTemperature"></td>
+              <td id="mTemperature"></td>
+              <td id="da_Temperature"></td>
             </tr>
             <tr class="">
-              <td>precipProbability</td>
-              <td id="cPrecipProbability">{cPrecipProbability}</td>
-              <td>Column content</td>
-              <td>Column content</td>
+              <td>Höchstwerte</td>
+              <td id="cTemperatureMinMax"></td>
+              <td id="mTemperatureMinMax"></td>
+              <td id="da_TemperatureMinMax"></td>
             </tr>
             <tr class="">
-              <td>Feels</td>
-              <td id="cApparentTemperature">{cApparentTemperature}</td>
-              <td>Column content</td>
-              <td>Column content</td>
+              <td>Gefühlt</td>
+              <td id="cApparentTemperature"></td>
+              <td id="mApparentTemperature"></td>
+              <td id="da_ApparentTemperature"></td>
             </tr>
             <tr class="">
-              <td>Wind</td>
-              <td id="cWindSpeed">{cWindSpeed}</td>
-              <td>Column content</td>
-              <td>Column content</td>
+              <td>Regen</td>
+              <td id="cPrecipProbability"></td>
+              <td id="mPrecipProbability"></td>
+              <td id="da_PrecipProbability"></td>
+            </tr>
+            <tr class="">
+              <td>Windstärke</td>
+              <td id="cWindSpeed"></td>
+              <td id="mWindSpeed"></td>
+              <td id="da_WindSpeed"></td>
             </tr>
             <tr class="">
               <td>Ozon + UV Index</td>
-              <td id="cOzoneUvIndex">{cOzoneUvIndex}</td>
-              <td>Column content</td>
-              <td>Column content</td>
+              <td id="cOzoneUvIndex"></td>
+              <td id="mOzoneUvIndex"></td>
+              <td id="da_OzoneUvIndex"></td>
             </tr>
             <tr class="">
-              <td>Humidity</td>
-              <td id="cHumidity">{cHumidity}</td>
-              <td>Column content</td>
-              <td>Column content</td>
+              <td>Humidität</td>
+              <td id="cHumidity"></td>
+              <td id="mHumidity"></td>
+              <td id="da_Humidity"></td>
             </tr>
           </tbody>
         </table>
 
         <div class="col-3">
-          <h4>Showing forecast for <span id="fieldCityName" class="badge">Time</span></h4>
+          <h4>Zeige aktuell die Wettervorhersage für <span id="fieldCityName" class="badge"></span></h4>
         </div>
       </div>
 

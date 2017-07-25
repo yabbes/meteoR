@@ -1,4 +1,4 @@
-var cfg = new apicfg();
+var cfg = new Apicfg();
 
 var cityCoords;
 var cityObj;
@@ -52,16 +52,44 @@ function updateApp(){
   console.log(result);
   //Daily summary
   $('#dailySummary').html(result.daily.summary);
-  //"Currently" data and city name
 
+  //"Currently" data and city name
   $('#fieldCityName').html(cityName);
   $('#cTime').html(result.currently.time);
   $('#cSummary').html(result.currently.summary);
-  $('#cTemperature').html(result.currently.temperature);
+  $('#cTemperature').html((result.currently.temperature + '°C'));
+  $('#cTemperatureMinMax').html((result.daily.data[0].temperatureMin + ' - ' + result.daily.data[0].temperatureMax + '°C'));
   $('#cPrecipProbability').html(result.currently.precipProbability);
-  $('#cApparentTemperature').html(result.currently.apparentTemperature);
+  $('#cApparentTemperature').html((result.currently.apparentTemperature + '°C'));
   $('#cWindSpeed').html(result.currently.windSpeed);
-  $('#cOzoneUvIndex').html((result.currently.ozone + ' ' + result.currently.uvIndex));
+  $('#cOzoneUvIndex').html((result.currently.ozone + ' ' + result.daily.data[0].uvIndex));
+  $('#cHumidity').html(result.currently.humidity);
+
+  // Tomorrow
+  // Calculations
+  let mTempMin = result.daily.data[1].temperatureMin;
+  let mTempMax = result.daily.data[1].temperatureMax;
+  let mTempMean = Math.floor((mTempMin + mTempMax / 2));
+  //
+  $('#mTime').html(result.daily.data[1].time);
+  $('#mSummary').html(result.daily.data[1].summary);
+  $('#mTemperature').html((mTempMean + '°C'));
+  $('#mTemperatureMinMax').html((mTempMin + ' - ' + mTempMax + '°C'));
+  $('#mPrecipProbability').html((result.daily.data[1].precipProbability * 100) + '%');
+  $('#mApparentTemperature').html((result.currently.apparentTemperature + '°C'));
+  $('#mWindSpeed').html(result.currently.windSpeed);
+  $('#mOzoneUvIndex').html((result.currently.ozone + ' ' + result.daily.data[0].uvIndex));
+  $('#mHumidity').html(result.currently.humidity);
+
+  // The day after tomorrow
+  $('#cTime').html(result.currently.time);
+  $('#cSummary').html(result.currently.summary);
+  $('#cTemperature').html((result.currently.temperature + '°C'));
+  $('#cTemperatureMinMax').html((result.daily.data[0].temperatureMin + ' - ' + result.daily.data[0].temperatureMax + '°C'));
+  $('#cPrecipProbability').html(result.currently.precipProbability);
+  $('#cApparentTemperature').html((result.currently.apparentTemperature + '°C'));
+  $('#cWindSpeed').html(result.currently.windSpeed);
+  $('#cOzoneUvIndex').html((result.currently.ozone + ' ' + result.daily.data[0].uvIndex));
   $('#cHumidity').html(result.currently.humidity);
 
 
