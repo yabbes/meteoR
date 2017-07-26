@@ -55,10 +55,12 @@ function updateApp(){
 
   // "Currently" data and city name
   // Calculations
+  let dateToday = new Date(result.currently.time * 1000);
+  dateToday = dateToday.toLocaleDateString();
   // I don't need to calculate the mean temp because the temp is the current temp
   // Data binding
   $('#fieldCityName').html(cityName);
-  $('#cTime').html(result.currently.time);
+  $('#cTime').html(dateToday);
   $('#cSummary').html(result.currently.summary);
   $('#cTemperature').html((result.currently.temperature + '°C'));
   $('#cTemperatureMinMax').html((result.daily.data[0].temperatureMin + ' - ' + result.daily.data[0].temperatureMax + '°C'));
@@ -77,8 +79,11 @@ function updateApp(){
   let mApparentTempMin = result.daily.data[1].apparentTemperatureMin;
   let mApparentTempMax = result.daily.data[1].apparentTemperatureMax;
   let mApparentTempMean = Math.floor((mApparentTempMin + mApparentTempMax / 2));
+
+  let dateTomorrow = new Date(result.daily.data[1].time * 1000);
+  dateTomorrow = dateTomorrow.toLocaleDateString();
   // Data binding
-  $('#mTime').html(result.daily.data[1].time);
+  $('#mTime').html(dateTomorrow);
   $('#mSummary').html(result.daily.data[1].summary);
   $('#mTemperature').html((mTempMean + '°C'));
   $('#mTemperatureMinMax').html((mTempMin + ' - ' + mTempMax + '°C'));
@@ -99,8 +104,11 @@ function updateApp(){
   let daApparentTempMax = result.daily.data[2].apparentTemperatureMax;
   let daApparentTempMean = Math.floor((daApparentTempMin + daApparentTempMax / 2));
 
+  let dateDaTomorrow = new Date(result.daily.data[2].time * 1000);
+  dateDaTomorrow = dateDaTomorrow.toLocaleDateString();
+
   // Data binding for the day after tomorrow
-  $('#da_Time').html(result.daily.data[2].time);
+  $('#da_Time').html(dateDaTomorrow);
   $('#da_Summary').html(result.daily.data[2].summary);
   $('#da_Temperature').html((daTempMean + '°C'));
   $('#da_TemperatureMinMax').html((daTempMin + ' - ' + daTempMax + '°C'));
