@@ -5,6 +5,10 @@
 // Font Awesome
 @import "../bower_components/font-awesome/scss/font-awesome";
 
+body {
+  font-family: 'Raleway', serif;
+}
+
 .jumbotron {
   margin-bottom: 0px !important;
 }
