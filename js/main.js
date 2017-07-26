@@ -62,11 +62,11 @@ function updateApp(){
   $('#cSummary').html(result.currently.summary);
   $('#cTemperature').html((result.currently.temperature + '°C'));
   $('#cTemperatureMinMax').html((result.daily.data[0].temperatureMin + ' - ' + result.daily.data[0].temperatureMax + '°C'));
-  $('#cPrecipProbability').html((result.currently.precipProbability * 100) + '%');
+  $('#cPrecipProbability').html(Math.floor((result.currently.precipProbability * 100)) + '%');
   $('#cApparentTemperature').html((result.currently.apparentTemperature + '°C'));
   $('#cWindSpeed').html(result.currently.windSpeed);
   $('#cOzoneUvIndex').html((result.currently.ozone + ' ' + result.daily.data[0].uvIndex));
-  $('#cHumidity').html((result.currently.humidity * 100) + '%');
+  $('#cHumidity').html(Math.floor((result.currently.humidity * 100)) + '%');
 
   // Tomorrow
   // Calculations
@@ -82,11 +82,11 @@ function updateApp(){
   $('#mSummary').html(result.daily.data[1].summary);
   $('#mTemperature').html((mTempMean + '°C'));
   $('#mTemperatureMinMax').html((mTempMin + ' - ' + mTempMax + '°C'));
-  $('#mPrecipProbability').html((result.daily.data[1].precipProbability * 100) + '%');
+  $('#mPrecipProbability').html(Math.floor((result.daily.data[1].precipProbability * 100)) + '%');
   $('#mApparentTemperature').html((mApparentTempMean + '°C'));
   $('#mWindSpeed').html(result.daily.data[1].windSpeed);
   $('#mOzoneUvIndex').html((result.daily.data[1].ozone + ' ' + result.daily.data[1].uvIndex));
-  $('#mHumidity').html((result.daily.data[1].humidity * 100) + '%');
+  $('#mHumidity').html(Math.floor((result.daily.data[1].humidity * 100)) + '%');
 
 
   // The day after tomorrow
@@ -104,11 +104,11 @@ function updateApp(){
   $('#da_Summary').html(result.daily.data[2].summary);
   $('#da_Temperature').html((daTempMean + '°C'));
   $('#da_TemperatureMinMax').html((daTempMin + ' - ' + daTempMax + '°C'));
-  $('#da_PrecipProbability').html((result.daily.data[2].precipProbability * 100) + '%');
+  $('#da_PrecipProbability').html(Math.floor((result.daily.data[2].precipProbability * 100)) + '%');
   $('#da_ApparentTemperature').html((daApparentTempMean + '°C'));
   $('#da_WindSpeed').html(result.daily.data[2].windSpeed);
   $('#da_OzoneUvIndex').html((result.daily.data[2].ozone + ' ' + result.daily.data[2].uvIndex));
-  $('#da_Humidity').html((result.daily.data[2].humidity * 100) + '%');
+  $('#da_Humidity').html(Math.floor((result.daily.data[2].humidity * 100)) + '%');
 
 
 
